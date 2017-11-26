@@ -1,0 +1,54 @@
+.header-page{
+    background: rgba(0,0,0,.7) url(img/header-bg.jpg) no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding-bottom: rem(268px);
+    color: #f4f5f9;
+    clip-path: polygon(0 0, 100% 0, 100% 91%, 50% 100%, 0 91%);
+}
+
+.header-page__hero{
+    margin-top: rem(186px);
+    text-align: center;
+}
+
+.header-page__title{
+    margin-bottom: rem(18px);
+    color: #fff;
+    text-transform: none;
+
+    &--last-child{
+        padding-top: 0;
+        margin-bottom: rem(19px);
+        @include decor(#fff, uppercase, rem(1px), rem(7px));
+    }
+}
+
+.header-page__text{
+    width: 52%;
+    margin: 0 auto rem(69px) auto;
+    color: #cbc6c0;
+}
+
+.header-btn{
+    @include flex(flex, center);
+}
+
+.header-btn__btn{
+    @extend %btn;
+    background-color: transparent;
+    width: rem(226px);
+    padding: rem(15px) 0;
+    margin-right: rem(30px);
+    border: rem(1px) solid #fff;
+    transition: all .1s ease-in .1s;
+
+    &--hover:hover{
+        background-color: #e74c3c;
+        border: rem(1px) solid transparent;
+    }
+
+    &--last-child:last-child{
+        margin-right: 0;
+    }
+}

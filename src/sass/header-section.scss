@@ -1,0 +1,22 @@
+.header-section{
+    margin-bottom: rem(64px);
+    text-align: center;
+}
+
+.header-section__title{
+    margin-bottom: rem(18px);
+}
+
+.header-section__text{
+    margin-bottom: rem(20px);
+    word-spacing: 1px;
+}
+
+.header__figure{
+    @extend .figure;
+    margin-bottom: 0;
+}
+
+.header__dot{
+    @extend .figure__dot;
+}

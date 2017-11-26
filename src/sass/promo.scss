@@ -1,0 +1,34 @@
+.promo{
+    background: rgba(0,0,0,.7) url(img/promo-bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding-top: rem(147px);
+    padding-bottom: rem(137px);
+    text-align: center;
+}
+
+.promo__section{
+    padding-bottom: 0;
+}
+
+.promo__title{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    @include decor(#fff, none);
+}
+
+.promo__text{
+    margin-bottom: 62px;
+    color: #fff;
+}
+
+.promo__span{
+    font-weight: 700;
+}
+
+.promo__btn{
+    background-color: #e74e3e;
+    @include decor(#fff, uppercase);
+    @extend %btn;
+    padding: rem(18px) (48px);
+}

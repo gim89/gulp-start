@@ -1,0 +1,39 @@
+.footer-page{
+    background-color: #202020;
+    padding: rem(32px) 0;
+}
+
+.footer__container{
+    @include flex(flex, space-between);
+    @extend .container;
+}
+
+.footer__social{
+    @include flex(flex, space-between);
+}
+
+.footer__item{
+    margin-right: rem(15px);
+
+    &--last-child:last-child{
+        margin-right: 0;
+    }
+}
+
+.footer__img{
+    width: rem(20px);
+    height: rem(26px);
+    fill: #fff;
+    cursor: pointer;
+    transition: all .1s ease-in .1s;
+
+    &--hover:hover{
+        fill: #e74e3e;
+    }
+
+}
+
+.footer__text{
+    font-weight: 600;
+    opacity: 0.75;
+}

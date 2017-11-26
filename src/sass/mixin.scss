@@ -1,0 +1,21 @@
+@mixin pseudo($width, $height, $top: 0, $left: 0){
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+    content: "";
+}
+
+@mixin flex($display, $justify, $align: stretch){
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin decor($color: #000, $text-transform: none, $word-spacing: 0, $letter-spacing: 0){
+    color: $color;
+    word-spacing: $word-spacing;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-transform;
+}

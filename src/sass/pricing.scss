@@ -1,0 +1,90 @@
+.pricing{
+    background-color: #fff;
+    text-align: center;
+    border: rem(1px) solid #f4f5f9;
+    padding-top: rem(148px);
+    padding-bottom: rem(127px);
+}
+
+.pricing__body{
+    @include flex(flex, space-between);
+}
+
+.pricing__section{
+    flex-basis: 32.5%;
+
+    &--hover:hover .pricing__part--first-child:first-child,
+    &--hover:hover .pricing__btn{
+        background-color: #e74c3c;
+        transition: all .1s ease-in .1s;
+    }
+
+    &--hover:hover .pricing__text{
+        color: #e74c3c;
+        transition: all .1s ease-in .1s;
+    }
+}
+
+.pricing__part{
+    position: relative;
+    background-color: #999;
+
+    &--last-child:last-child{
+        background-color: #f4f5f9;
+        padding-top: rem(124px);
+        padding-bottom: rem(50px);
+    }
+}
+
+.pricing__title{
+    @include decor(#fff, uppercase, 0, rem(1px));
+    padding-top: rem(40px);
+    padding-bottom: rem(130px);
+    font-family: 'Open Sans';
+    font-weight: 600;
+}
+
+.pricing__circle{
+    @include pseudo(rem(157px), rem(157px), 102%, 50%)
+    z-index: 1;
+    @extend %icons;
+    flex-direction: column;
+    background-color: #fff;
+
+    &--after:after{
+        @include pseudo(rem(156px), rem(80px), rem(-10px), rem(-10px));
+        border-width: rem(10px);
+    }
+}
+
+.pricing__text{
+    font: 700 rem(40px) 'Source Sans Pro';
+}
+
+.pricing__span{
+    display: block;
+    font: rem(13px) 'Source Sans Pro';
+    color: #999;
+}
+
+.prising__list{
+    margin-bottom: rem(48px);
+}
+
+.pricing__item{
+    @include decor(#999, none, 0, rem(1px));
+    margin-bottom: rem(22px);
+    font: rem(14px) 'Source Sans Pro';
+
+    &--last-child:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.pricing__btn{
+    @extend %btn;
+    background-color: #999;
+    padding: rem(17px) rem(34px);
+    font-size:rem(12px);
+    font-weight: 600;
+}

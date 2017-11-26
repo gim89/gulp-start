@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: local('Source Sans Pro Light'),
+         local('SourceSansPro-Light'),
+         url('../fonts/sourcesansprolight.woff2') format('woff2'),
+         url('../fonts/sourcesansprolight.woff') format('woff'),
+         url('../fonts/sourcesansprolight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: local('Source Sans Pro'),
+         local('SourceSansPro-Regular'),
+         url('../fonts/sourcesanspro.woff2') format('woff2'),
+         url('../fonts/sourcesanspro.woff') format('woff'),
+         url('../fonts/sourcesanspro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: local('Source Sans Pro Bold'),
+         local('SourceSansPro-Bold'),
+         url('../fonts/sourcesansprobold.woff2') format('woff2'),
+         url('../fonts/sourcesansprobold.woff') format('woff'),
+         url('../fonts/sourcesansprobold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: local('Source Sans Pro Semibold'),
+         local('SourceSansPro-Semibold'),
+         url('../fonts/sourcesansprosemibold.woff2') format('woff2'),
+         url('../fonts/sourcesansprosemibold.woff') format('woff'),
+         url('../fonts/sourcesansprosemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'),
+         local('OpenSans'),
+         url('../fonts/opensans.woff2') format('woff2'),
+         url('../fonts/opensans.woff') format('woff'),
+         url('../fonts/opensans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold'),
+         local('OpenSans-Bold'),
+         url('../fonts/opensansbold.woff2') format('woff2'),
+         url('../fonts/opensansbold.woff') format('woff'),
+         url('../fonts/opensansbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold'),
+         local('OpenSans-Semibold'),
+         url('../fonts/opensanssemibold.woff2') format('woff2'),
+         url('../fonts/opensanssemibold.woff') format('woff'),
+         url('../fonts/opensanssemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

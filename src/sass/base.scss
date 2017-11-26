@@ -1,0 +1,58 @@
+.container{
+    width: rem(1170px);
+    margin: 0 auto;
+}
+
+%btn{
+    background-color: #e74c3c;
+    font: 700 rem(14px) 'Open Sans';
+    @include decor(#fff, uppercase);
+    border-radius: rem(3px);
+    box-shadow: 0 rem(2px) rem(4.8px) rem(0.4px) rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+%icons{
+    @include flex(flex, center, center);
+    background-color: #f4f5f9;
+    text-align: center;
+    border-radius: 50%;
+    transform: translate(-50% ,-50%);
+
+    &:after{
+        background-color: transparent;
+        border: rem(5px) solid rgba(255, 255, 255, .25);
+        border-bottom: 0;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+}
+
+%icons__img{
+    width: 30px;
+    height: 30px;
+}
+
+h1{
+    @include decor(#fff, uppercase, rem(1px), rem(7px));
+    font: 700 rem(72px) 'Open Sans';
+}
+
+h2{
+    @include decor(#6a6a6a, uppercase, rem(3px), rem(3px));
+    font: 700 rem(36px)/1 'Source Sans Pro';
+}
+
+h3{
+    @include decor(#6a6a6a, uppercase, rem(1px), rem(1px));
+    font: rem(24px) 'Source Sans Pro';
+}
+
+h4{
+    @include decor(#6a6a6a, uppercase, rem(1px), rem(2px));
+    font: 600 rem(18px) 'Open Sans';
+}
+
+p{
+    @include decor(#999, none, 0, 0);
+    font: rem(14px)/1.7 'Open Sans';
+}

@@ -1,0 +1,103 @@
+.clients{
+    background-color: #f4f5f9;
+    text-align: center;
+    border: rem(1px) solid #d8d9db;
+    padding-top: rem(142px);
+    padding-bottom: rem(138px);
+}
+
+.clients__title{
+    word-spacing: 0;
+    letter-spacing: 0;
+}
+
+.clients__body{
+    @include flex(flex, space-between);
+    flex-wrap: wrap;
+}
+
+.clients__text{
+    margin-bottom: 0;
+}
+
+.clients__item{
+    width: rem(210px);
+    height: rem(100px);
+    background: #000 url(../img/clients-sprites.png) no-repeat;
+    margin-bottom: rem(30px);
+    box-shadow: 0 rem(2px) rem(4.8px) rem(0.4px) rgba(0, 0, 0, 0.25);
+
+    &--nth-last-child:nth-last-child(-n+5){
+        margin-bottom: 0;
+    }
+}
+
+.clients__img-one{
+    background-position: rem(-470px) rem(-250px);
+    &--hover:hover{
+        background-position: rem(-10px) rem(-370px);
+    }
+}
+
+.clients__img-two {
+    background-position: rem(-700px) rem(-370px);
+    &--hover:hover {
+        background-position: rem(-700px) rem(-490px);
+    }
+}
+
+.clients__img-three {
+    background-position: rem(-700px) rem(-130px);
+    &--hover:hover {
+        background-position: rem(-700px) rem(-250px);
+    }
+}
+
+.clients__img-four {
+    background-position: rem(-10px) rem(-250px);
+    &--hover:hover {
+        background-position: rem(-240px) rem(-250px);
+    }
+}
+
+.clients__img-five {
+    background-position: rem(-10px) rem(-130px);
+    &--hover:hover {
+        background-position: rem(-240px) rem(-130px);
+    }
+}
+
+.clients__img-six {
+    background-position: rem(-10px) rem(-490px);
+    &--hover:hover {
+        background-position: rem(-240px) rem(-490px);
+    }
+}
+
+.clients__img-seven {
+    background-position: rem(-10px) rem(-10px);
+    &--hover:hover {
+        background-position: rem(-470px) rem(-370px);
+    }
+}
+
+.clients__img-eight {
+    background-position: rem(-240px) rem(-10px);
+    &--hover:hover {
+        background-position: rem(-240px) rem(-370px);
+    }
+}
+
+.clients__img-nine {
+    background-position: rem(-470px) rem(-10px);
+    &--hover:hover {
+        background-position: rem(-470px) rem(-130px);
+    }
+}
+
+.clients__img-ten {
+    background-position: rem(-470px) rem(-490px);
+    &--hover:hover {
+        background-position: rem(-700px) rem(-10px);
+    }
+}

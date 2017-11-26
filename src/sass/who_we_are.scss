@@ -1,0 +1,78 @@
+.who-we-are{
+    position: relative;
+    background-color: #fff;
+    padding-top: rem(121px);
+    padding-bottom: rem(106px);
+    border-bottom: rem(1px) solid #e6e7eb;
+}
+
+.who-we-are__icons{
+    @extend %icons;
+    @include pseudo(rem(64px), rem(64px), -1%, 50%);
+
+    &--after:after{
+        @include pseudo(rem(64px), rem(32px), rem(-5px), rem(-5px));
+    }
+}
+
+.who-we-are__svg{
+    @extend %icons__img;
+}
+
+.who-we-are__body{
+    @include flex(flex, space-between);
+}
+
+.who-we-are__item{
+    width: 21.4%;
+    text-align: center;
+
+    &--hover:hover .who-we-are__icon{
+        border: rem(1px) solid #e74c3c;
+        transform: rotate(45deg);
+        transform-origin: 50% 50%;
+        transition: all .1s ease-in .1s;
+    }
+
+    &:hover .who-we-are__img{
+        transform: rotate(-45deg);
+        transform-origin: 50% 50%;
+        transition: all .1s ease-in .1s;
+
+    }
+
+    &:hover .who-we-are__title{
+        color: #e74c3c;
+        transition: all .1s ease-in .1s;
+    }
+}
+
+.who-we-are__icon{
+    @include flex(flex, center, center);
+    width: rem(70px);
+    min-height: rem(70px);
+    margin: 0 auto rem(28px) auto;
+    border: rem(1px) solid #888;
+}
+
+.who-we-are__img{
+    width: rem(27px);
+    max-height: rem(27px);
+}
+
+.who-we-are__title{
+    position: relative;
+    margin-bottom: rem(29px);
+    text-transform: uppercase;
+
+    &--after:after{
+        @include pseudo(rem(45px), rem(2px), rem(39px), 50%);
+        transform: translate(-50% ,-50%);
+        background-color: #888;
+    }
+}
+
+.who-we-are__text{
+    font: 300 rem(14px)/1.5 'Source Sans Pro';
+    color: #999;
+}

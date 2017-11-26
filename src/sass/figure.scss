@@ -1,0 +1,31 @@
+.figure{
+    width: 17%;
+    margin: 0 auto rem(36px) auto;
+}
+
+.figure__dot{
+    position: relative;
+    display: inline-block;
+    width: rem(6px);
+    height: rem(6px);
+    background-color: #e74c3c;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    &:before,
+    &:after{
+        @include pseudo(rem(80px), rem(1px), 50%, 0);
+        display: inline-block;
+        text-align: center;
+        background-color: #999;
+        transform: translate(0, -50%);
+    }
+
+    &:before{
+        left: rem(-96px);
+    }
+
+    &:after{
+        left: rem(20px);
+    }
+}
