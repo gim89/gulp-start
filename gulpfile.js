@@ -23,6 +23,23 @@ gulp.task('html', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('css', function() {
+    return gulp.src('src/css/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 15 versions', '> 1%', 'ie 9', 'ie 8', 'ie 7'],
+            cascade: true
+        }))
+        .pipe(mmq({
+            log: false
+        }))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.reload({stream: true}))
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('sass', function() {
     return gulp.src('src/sass/styles.scss')
         .pipe(sass())
@@ -33,11 +50,11 @@ gulp.task('sass', function() {
         .pipe(mmq({
             log: false
         }))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream: true}))
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream: true}));
 });
 
@@ -61,8 +78,9 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.html', ['html'], browserSync.reload);
-    gulp.watch('src/**/*.scss', ['sass'], browserSync.reload);
+    gulp.watch('src/html/*.html', ['html'], browserSync.reload);
+    gulp.watch('src/css/*.css', ['css'], browserSync.reload);
+    gulp.watch('src/sass/*.scss', ['sass'], browserSync.reload);
     gulp.watch('src/img/*', ['img'], browserSync.reload);
     gulp.watch('src/fonts/*', ['fonts'], browserSync.reload);
 });
@@ -84,6 +102,6 @@ gulp.task('clear', function (callback) {
 	return cache.clearAll();
 })
 
-gulp.task('build', ['html', 'sass', 'img', 'fonts']);
+gulp.task('build', ['html', 'css', 'sass', 'img', 'fonts']);
 
 gulp.task('start', [ 'del', 'build', 'server', 'watch']);
