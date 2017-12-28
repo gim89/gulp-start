@@ -10,10 +10,11 @@ var gulp         = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
     del          = require('del'),
-    browserSync  = require('browser-sync');
+    browserSync  = require('browser-sync').create(),
+    flatten      = require('gulp-flatten');
 
 gulp.task('html', function() {
-    return gulp.src('src/html/index.html')
+    return gulp.src('src/html/*.html')
         .pipe(rigger())
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({stream: true}))
@@ -41,7 +42,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.src('src/sass/styles.scss')
+    return gulp.src(['src/sass/*.scss', 'src/sass/bootstrap/*.scss'])
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 15 versions', '> 1%', 'ie 9', 'ie 8', 'ie 7'],
@@ -54,12 +55,13 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({stream: true}))
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
+        .pipe(flatten())
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('img', function() {
-    return gulp.src('src/img/*')
+    return gulp.src('src/img/**/*')
         .pipe(cache(imagemin({
             interlaced: true,
             progressive: true,
@@ -67,6 +69,7 @@ gulp.task('img', function() {
             svgoPlugins: [{removeViewBox: true}],
             use: [pngquant()]
         })))
+        .pipe(flatten())
         .pipe(gulp.dest('dist/img'))
         .pipe(browserSync.reload({stream: true}));
 });
@@ -78,11 +81,11 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/html/*.html', ['html'], browserSync.reload);
-    gulp.watch('src/css/*.css', ['css'], browserSync.reload);
-    gulp.watch('src/sass/*.scss', ['sass'], browserSync.reload);
-    gulp.watch('src/img/*', ['img'], browserSync.reload);
-    gulp.watch('src/fonts/*', ['fonts'], browserSync.reload);
+    gulp.watch('src/html/**/*.html', ['html'], browserSync.reload);
+    gulp.watch('src/css/**/*.css', ['css'], browserSync.reload);
+    gulp.watch('src/sass/**/*.scss', ['sass'], browserSync.reload);
+    gulp.watch('src/img/**/*', ['img'], browserSync.reload);
+    gulp.watch('src/fonts/**/*', ['fonts'], browserSync.reload);
 });
 
 gulp.task('del', function() {
